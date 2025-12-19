@@ -1,24 +1,8 @@
-# Automated Smart Parking System (ASPS)
+Note on Controller Responsibilities
 
-University engineering project – real hardware implementation.
-
-## Project Description
-ASPS is a dual-Arduino automated smart parking system designed to manage vehicle entry, parking slots, VIP access, and safety alerts using real sensors and actuators.
-
-## Hardware Overview
-- 2 × Arduino Uno
-- IR sensors (entry, exit, 3 slots)
-- Ultrasonic sensor (anti-collision)
-- RFID module (VIP access)
-- Servo motors (gates)
-- LCD display
-- Buzzer
-- LDR sensor
-- Flame sensor
-
-## Repository Structure
-- src/ → Arduino source code
-- docs/ → diagrams and documentation
-
-## Project Type
-Hardware-based system (no cloud, no mobile app)
+This project uses two Arduino Uno boards. While each controller has a primary responsibility
+(Gate & Access control vs. Parking & Safety monitoring), some logic such as slot state handling,
+LCD updates, and access-related routines may appear in both sketches. This overlap is intentional
+and was chosen to simplify deployment, standalone testing, and hardware validation. It does not
+indicate a design error or incomplete separation, and the code reflects a finalized, working
+hardware implementation.
