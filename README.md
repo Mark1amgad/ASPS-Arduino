@@ -148,29 +148,18 @@ Safety System Monitors Environment
 
 ## Live Prototype Images
 
+### Conceptual System Render
+
+![Smart Parking Concept Render](assets/renders/smart_parking_render.jpeg)
+
+*AI-assisted conceptual visualization representing the ASPS smart parking system architecture and automation workflow.*
+
 ### Physical Hardware Implementation
 
 ![Real Hardware Implementation](assets/prototype/real_implementation.jpeg)
 
-![Complete Prototype Setup](assets/prototype/complete_prototype_setup.jpeg)
 
 *Complete ASPS prototype showing dual Arduino controllers, servo gates, LCD display, RFID module, and parking slot sensors.*
-
-### System Components
-
-![Prototype Overview](assets/prototype/prototype_overview.jpeg)
-
-*Detailed view of embedded components including Arduino boards, breadboard wiring, servo actuators, and sensor array.*
-
-### Gate Mechanism
-
-![Entry Gate Detail](assets/prototype/entry_gate_detail.jpeg)
-
-*Servo-operated entry gate with IR sensor detection.*
-
-![Exit Gate Detail](assets/prototype/exit_gate_detail.jpeg)
-
-*Exit gate mechanism with automated operation.*
 
 
 ---
