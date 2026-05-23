@@ -251,18 +251,8 @@ Potential improvements for production-scale deployment:
 
 ---
 
-## Team
-
-**Lead Developer & Hardware Engineer:** Mark Amgad  
-**Course:** ELE212 – Embedded Systems & Automation  
-**Institution:** [University Name]
-
----
-
-## License
-
-This project is part of an academic engineering portfolio. Code may be used for educational and demonstration purposes with proper attribution.
-
----
-
-**Built with Arduino • Designed for Smart Parking Automation • Engineered for Real-World Application**
+### Author
+* **Mark Amgad Nassief Botros Mekhaiel**
+  * *Artificial Intelligence Engineering Student*
+  * *Faculty of Computer Science and Engineering*
+  * *New Mansoura University*
