@@ -11,7 +11,7 @@
 
 **Automated Smart Parking System (ASPS)** is an embedded systems engineering prototype that automates vehicle entry, parking slot management, VIP access control, and real-time safety monitoring. Built using dual Arduino microcontrollers with RFID authentication, infrared sensors, and servo actuators, this project demonstrates practical implementation of sensor integration and automation logic.
 
-**Project Context:** University engineering project – ELE212 (Embedded Systems & Automation)  
+**Project Context:** University engineering project – ELE212 (Electrical Measurements & Measuring Instruments)  
 **Live Demo:** [Companion Web Interface](https://easy-park-tech.lovable.app)
 
 ---
@@ -200,7 +200,7 @@ Manages collision prevention via ultrasonic sensor, fire detection with flame se
 ## Project Notes
 
 ### Academic Context
-This project was developed as part of **ELE212 – Embedded Systems & Automation**, demonstrating practical application of:
+This project was developed as part of **ELE212 – Electrical Measurements & Measuring Instruments**, demonstrating practical application of:
 - Sensor integration and signal processing
 - Real-time embedded system programming
 - Actuator control and feedback systems
@@ -230,6 +230,3 @@ Potential improvements for production-scale deployment:
 Faculty of Computer Science and Engineering  
 New Mansoura University
 
----
-
-**Built with Arduino • Designed for Smart Parking Automation • Engineered for Real-World Application**
