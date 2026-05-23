@@ -1,0 +1,39 @@
+# Arduino IDE
+*.ino.with_bootloader.hex
+
+# Build / compiled files
+*.o
+*.elf
+*.bin
+*.hex
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Arduino IDE temporary files
+*.tmp
+*.temp
+
+# Compressed files
+*.zip
+*.rar
+*.7z
+
+# Python cache (if generated accidentally)
+__pycache__/
+
+# Environment files
+.env
+
+# Optional large exports
+*.mp4
+
+# Keep assets tracked
+!assets/
