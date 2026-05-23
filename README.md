@@ -1,83 +1,50 @@
-# Automated Smart Parking System (ASPS)
 
-University engineering project – real hardware implementation.
-
-## Project Description
-ASPS is a dual-Arduino automated smart parking system designed to manage vehicle entry, parking slots, VIP access, and safety alerts using real sensors and actuators.
-
-## Architectural Note
-This project uses two Arduino Uno boards. Some functionalities (such as slot state awareness and LCD status display) may appear in both controller sketches. This overlap is intentional and was done to simplify deployment, testing, and standalone operation of each controller during the academic evaluation phase. It does not represent a design error or incomplete separation.
-
-## Hardware Overview
-- 2 × Arduino Uno
-- IR sensors (entry, exit, 3 slots)
-- Ultrasonic sensor (anti-collision)
-- RFID module (VIP access)
-- Servo motors (gates)
-- LCD display
-- Buzzer
-- LDR sensor
-- Flame sensor
-
-## Repository Structure
-- src/ → Arduino source code
-
-## Project Type
-Hardware-based system (no cloud, no mobile app)
 # ASPS – Automated Smart Parking System
 
 > A smart parking system prototype integrating embedded systems, automation, and access control.
 
-![ASPS Smart Parking System](/WhatsApp%20Image%202026-01-26%20at%203.25.31%20AM%20(1).jpeg)
-
-## Overview
-
-**Automated Smart Parking System (ASPS)** is a dual-embedded controller prototype designed to automate vehicle entry, parking slot management, VIP access control, and real-time safety monitoring. Built using Arduino microcontrollers, RFID authentication, infrared sensors, and servo actuators, this project demonstrates practical implementation of embedded systems engineering.
-
-**Project Context:** University engineering project – ELE212 (Embedded Systems & Automation)
-
-**Live Demo:** [Companion Web Interface](https://easy-park-tech.lovable.app)
+![ASPS Smart Parking System](assets/prototype/hero_prototype.jpeg)
 
 ---
 
 ## Problem Statement
 
 Manual parking management systems face several challenges:
-- **Inefficient space utilization** – drivers waste time searching for available slots
-- **No access control** – unauthorized vehicles can enter restricted areas
-- **Safety concerns** – lack of collision detection and emergency response
-- **No real-time monitoring** – parking availability is not communicated effectively
 
-**ASPS addresses these challenges** by integrating sensor-based automation, RFID authentication, and real-time status display into a unified parking management prototype.
+- **Inefficient space utilization** – drivers waste time searching for available slots  
+- **No access control** – unauthorized vehicles can enter restricted areas  
+- **Safety concerns** – lack of collision detection and emergency response  
+- **No real-time monitoring** – parking availability is not communicated effectively  
+
+ASPS addresses these challenges by integrating sensor-based automation, RFID authentication, and real-time status display into a unified parking management prototype.
 
 ---
 
 ## System Overview
 
-The ASPS architecture uses **two Arduino Uno microcontrollers** working in tandem:
+ASPS is a dual-Arduino automated smart parking system that manages vehicle entry, parking slots, VIP access, and safety alerts using real sensors and actuators.
 
-1. **Gate Access Controller** – Manages vehicle entry/exit, RFID authentication, gate operation, and slot occupancy tracking
-2. **Parking Safety Controller** – Handles collision prevention, fire detection, and automatic lighting
+The architecture uses two Arduino Uno microcontrollers working in tandem:
 
-This dual-controller design ensures **modular operation** and **independent functionality**, allowing each subsystem to operate autonomously while contributing to the overall parking automation workflow.
+- **Gate Access Controller** – Manages vehicle entry/exit, RFID authentication, gate operation, and slot occupancy tracking  
+- **Parking Safety Controller** – Handles collision prevention, fire detection, and automatic lighting  
 
-### Key Features
+This dual-controller design enables modular operation and independent functionality while contributing to the overall parking automation workflow.
 
-✓ **RFID-based VIP access control** with authorized card authentication  
-✓ **Automated gate operation** using servo motors (entry, exit, VIP)  
-✓ **Real-time slot occupancy detection** via infrared sensors  
-✓ **Collision prevention system** with ultrasonic distance measurement  
-✓ **Fire detection and alarm** with buzzer notification  
-✓ **Automatic lighting control** based on ambient light conditions  
-✓ **LCD status display** showing available slots and gate status  
-✓ **Visual indicators** (LEDs) for parking slot states  
+### Architectural Note
+
+This project uses two Arduino Uno boards. Some functionalities (such as slot state awareness and LCD status display) appear in both controller sketches by design to simplify deployment, testing, and standalone operation of each controller during academic evaluation.
+
+**Project Context:** University engineering project – ELE212 – Electrical Measurements & Measuring Instruments.
+
+**Live Demo:** [Companion Web Interface](https://easy-park-tech.lovable.app)
 
 ---
 
 ## Hardware Components
 
 | Component | Quantity | Purpose |
-|-----------|----------|---------|
+|---|---|---|
 | Arduino Uno | 2 | Main microcontrollers (gate control + safety) |
 | MFRC522 RFID Module | 1 | VIP access authentication |
 | IR Sensors | 5 | Vehicle detection (entry, exit, 3 parking slots) |
@@ -96,34 +63,34 @@ This dual-controller design ensures **modular operation** and **independent func
 
 ### Parking Workflow
 
-```
-1. Vehicle Approaches Entry Gate
+```text
+1. Vehicle approaches entry gate
    ↓
-2. IR Sensor Detects Vehicle Presence
+2. IR sensor detects vehicle presence
    ↓
-3. System Checks Available Slots
+3. System checks available slots
    ↓
-4a. Regular Parking: Gate Opens Automatically (if slots available)
-4b. VIP Access: RFID Card Scan → Authentication → Gate Opens
+4a. Regular parking: gate opens automatically
+4b. VIP access: RFID authentication → gate opens
    ↓
-5. Servo Motor Operates Entry Gate
+5. Servo motor operates the entry gate
    ↓
-6. Vehicle Enters Parking Area
+6. Vehicle enters the parking area
    ↓
-7. Slot Sensors Update Availability Status
+7. Slot sensors update availability status
    ↓
-8. LCD Display Shows Real-time Information
+8. LCD displays real-time parking information
    ↓
-9. Exit Gate Opens Automatically When Vehicle Detected
+9. Exit gate opens automatically when vehicle detected
    ↓
-10. System Resets for Next Vehicle
-```
+10. System resets for the next vehicle
+````
 
 ### Safety Monitoring (Continuous)
 
-- **Collision Prevention:** Ultrasonic sensor monitors distance; buzzer alerts at warning (<10cm) and danger (<2cm) thresholds
-- **Fire Detection:** Flame sensor triggers immediate alarm with 2500Hz buzzer tone
-- **Auto Lighting:** LDR sensor activates LEDs when ambient light falls below threshold
+* **Collision Prevention:** Ultrasonic sensor monitors distance and triggers buzzer alerts at warning and danger thresholds
+* **Fire Detection:** Flame sensor triggers an immediate alarm using a high-frequency buzzer tone
+* **Auto Lighting:** LDR sensor activates LEDs when ambient light falls below a defined threshold
 
 ---
 
@@ -131,123 +98,151 @@ This dual-controller design ensures **modular operation** and **independent func
 
 ### Physical Hardware Implementation
 
-![Complete Prototype Setup](/WhatsApp%20Image%202026-01-26%20at%203.25.31%20AM%20(1).jpeg)
-*Complete ASPS prototype showing dual Arduino controllers, servo gates, LCD display, RFID module, and parking slot sensors*
+![Complete Prototype Setup](assets/prototype/complete_prototype_setup.jpeg)
+
+*Complete ASPS prototype showing dual Arduino controllers, servo gates, LCD display, RFID module, and parking slot sensors.*
 
 ### System Components
 
-![Prototype Overview](/WhatsApp%20Image%202026-01-26%20at%203.25.31%20AM.jpeg)
-*Detailed view of embedded components: Arduino boards, breadboard wiring, servo actuators, and sensor array*
+![Prototype Overview](assets/prototype/prototype_overview.jpeg)
+
+*Detailed view of embedded components including Arduino boards, breadboard wiring, servo actuators, and sensor array.*
 
 ### Gate Mechanism
 
-![Entry Gate Detail](/WhatsApp%20Image%202026-02-11%20at%204.23.41%20AM.jpeg)
-*Servo-operated entry gate with IR sensor detection*
+![Entry Gate Detail](assets/prototype/entry_gate_detail.jpeg)
 
-![Exit Gate Detail](/WhatsApp%20Image%202026-02-11%20at%204.36.09%20AM.jpeg)
-*Exit gate mechanism with automated operation*
+*Servo-operated entry gate with IR sensor detection.*
+
+![Exit Gate Detail](assets/prototype/exit_gate_detail.jpeg)
+
+*Exit gate mechanism with automated operation.*
 
 ---
 
 ## Circuit Design
 
-The system uses a distributed wiring architecture connecting two Arduino controllers to various sensors and actuators:
+The system uses a distributed wiring architecture connecting two Arduino controllers to various sensors and actuators.
 
 ### Gate Access Controller Connections
-- **RFID Module:** SPI communication (pins 9, 10)
-- **Servo Motors:** PWM control (pins 2, 3, 8)
-- **IR Sensors:** Digital input (pins 4, 5, A1, A2, A3)
-- **LCD Display:** I2C communication
+
+* RFID module → SPI communication
+* Servo motors → PWM control
+* IR sensors → Digital input
+* LCD display → I2C communication
 
 ### Safety Controller Connections
-- **Flame Sensor:** Digital input (pin 2)
-- **Ultrasonic Sensor:** Digital I/O (pins 3, 4)
-- **Buzzer:** PWM output (pin 5)
-- **LDR Sensor:** Analog input (pin A0)
-- **LED Indicators:** Digital output (pin 7)
+
+* Flame sensor → Digital input
+* Ultrasonic sensor → Digital I/O
+* Buzzer → PWM output
+* LDR sensor → Analog input
+* LED indicators → Digital outputs
 
 ### Communication Flow
-```
-Sensors → Arduino (Processing Logic) → Actuators (Gates/LEDs/Buzzer)
+
+```text
+Sensors → Arduino (Processing Logic) → Actuators (Gates / LEDs / Buzzer)
                                     ↓
-                                 LCD Display (Status Output)
+                               LCD Display (Status Output)
 ```
 
 ---
 
 ## Companion Website
 
-This project also includes a **web-based companion platform** that serves as a conceptual interface for smart parking management:
+This project includes a web-based companion platform as a conceptual interface for smart parking management.
 
 🌐 **Live Website:** [https://easy-park-tech.lovable.app](https://easy-park-tech.lovable.app)
 
 The web interface demonstrates how the physical prototype could integrate with a digital platform for:
-- Remote monitoring of parking availability
-- User-friendly visualization of slot occupancy
-- Potential expansion to full IoT parking management system
+
+* Remote monitoring of parking availability
+* User-friendly visualization of slot occupancy
+* Future remote parking monitoring extensions
 
 ---
 
 ## Project Structure
 
-```
-ASPS_Github/
-├── README.md                          # Project documentation
+```text
+ASPS_Arduino/
+├── README.md
 ├── src/
-│   ├── gate_access_controller.ino     # Arduino sketch: entry/exit gates, RFID, slot tracking
-│   ├── parking_safety_controller.ino  # Arduino sketch: collision, fire detection, auto lighting
-│   └── README.md                      # Source code overview
-├── WhatsApp Image 2026-01-26 at 3.25.31 AM (1).jpeg  # Main prototype photo
-├── WhatsApp Image 2026-01-26 at 3.25.31 AM.jpeg      # Component detail photo
-├── WhatsApp Image 2026-02-11 at 4.23.41 AM.jpeg      # Entry gate detail
-└── WhatsApp Image 2026-02-11 at 4.36.09 AM.jpeg      # Exit gate detail
+│   ├── gate_access_controller.ino
+│   └── parking_safety_controller.ino
+└── assets/
+    ├── prototype/
+    │   ├── hero_prototype.jpeg
+    │   ├── complete_prototype_setup.jpeg
+    │   ├── prototype_overview.jpeg
+    │   ├── entry_gate_detail.jpeg
+    │   └── exit_gate_detail.jpeg
+    ├── renders/
+    └── diagrams/
 ```
 
 ### Source Code
 
-**[gate_access_controller.ino](src/gate_access_controller.ino)**  
-Handles vehicle entry/exit automation, RFID authentication, gate servo control, slot occupancy tracking, and LCD display updates.
+#### `src/gate_access_controller.ino`
 
-**[parking_safety_controller.ino](src/parking_safety_controller.ino)**  
-Manages collision prevention via ultrasonic sensor, fire detection with flame sensor, automatic lighting control using LDR, and buzzer alarm system.
+Handles:
 
-> **Note on Architecture:** This project intentionally uses two separate Arduino Uno boards with some overlapping functionality (such as slot state awareness). This design choice was made to simplify deployment, testing, and standalone operation of each controller during the academic evaluation phase. Each controller can operate independently while contributing to the overall system.
+* vehicle entry/exit automation
+* RFID authentication
+* gate servo control
+* slot occupancy tracking
+* LCD display updates
+
+#### `src/parking_safety_controller.ino`
+
+Handles:
+
+* collision prevention
+* fire detection
+* automatic lighting control
+* buzzer alarm system
+
+> Note on architecture: The project intentionally uses two separate Arduino Uno boards with some overlapping functionality to simplify deployment, testing, and standalone subsystem operation during academic evaluation.
 
 ---
 
 ## Technologies Used
 
-- **Microcontroller:** Arduino Uno (ATmega328P)
-- **Programming Language:** C/C++ (Arduino Framework)
-- **Communication Protocols:** SPI, I2C, PWM, Digital/Analog I/O
-- **Libraries:** MFRC522, Servo, LiquidCrystal_I2C, Wire
-- **Development Environment:** Arduino IDE
+| Category  | Technologies                                     |
+| --------- | ------------------------------------------------ |
+| Hardware  | Arduino Uno, RFID, IR sensors, ultrasonic sensor |
+| Actuation | Servo motors, relay module, buzzer, LEDs         |
+| Interface | 16x2 I2C LCD display                             |
+| Software  | C/C++ (Arduino Framework), Arduino IDE           |
+| Protocols | SPI, I2C, PWM, Digital/Analog I/O                |
+| Website   | Lovable companion web interface                  |
 
 ---
 
 ## Project Notes
 
 ### Academic Context
-This project was developed as part of **ELE212 – Embedded Systems & Automation**, demonstrating practical application of:
-- Sensor integration and signal processing
-- Real-time embedded system programming
-- Actuator control and feedback systems
-- System architecture and modular design
+
+This project was developed as part of **ELE212 – Electrical Measurements & Measuring Instruments**, demonstrating practical application of:
+
+* sensor integration
+* real-time embedded programming
+* actuator control
+* modular system design
 
 ### Design Considerations
-- **Modular architecture** allows independent testing of subsystems
-- **Non-blocking code** structure ensures continuous sensor monitoring
-- **State machine logic** manages gate operations and safety alerts
-- **Threshold-based triggering** for collision prevention and fire detection
+
+* Modular architecture allows independent testing of subsystems
+* Non-blocking logic enables continuous sensor monitoring
+* State-based control manages gate operations and safety alerts
+* Threshold-triggered responses handle collision and fire events
 
 ### Future Enhancements
-Potential improvements for production-scale deployment:
-- IoT connectivity (Wi-Fi/Bluetooth) for cloud integration
-- Multi-board communication (I2C/SPI between controllers)
-- Advanced RFID database management
-- Camera-based license plate recognition
-- Mobile app integration for real-time notifications
-- Database logging for usage analytics
+
+* Add Wi-Fi or Bluetooth connectivity for remote monitoring
+* Implement direct controller communication (I2C/SPI)
+* Extend notifications through a lightweight mobile/web interface
 
 ---
 
